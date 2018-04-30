@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata minClientVersion="2.8">
+    <id>InMemory</id>
+    <title>InMemory</title>
+    <!--<iconUrl></iconUrl>-->
+    <version>1.0.1</version>
+    <description>
+      A MemoryCache which tries to prevent cache miss for hot entries, by refreshing before expiration.
+    </description>
+    <summary>
+      Cache long time by auto refresh expire time and simple invocation rate checker
+    </summary>
+    <authors>Behzad Khosravifar</authors>
+    <owners>Behzad Khosravifar</owners>
+    <licenseUrl>http://www.gnu.org/licenses/gpl.txt</licenseUrl>
+    <projectUrl>https://github.com/Behzadkhosravifar/InMemoryCache</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <releaseNotes>
+      * First Version
+    </releaseNotes>
+    <copyright>Copyright (C) 2017-2018 Behzad Khosravifar</copyright>
+    <tags>
+      auto cache refresh cash rate limiter memory expire time
+    </tags>
+    <developmentDependency>true</developmentDependency>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System" />
+      <frameworkAssembly assemblyName="System.Core" />
+      <frameworkAssembly assemblyName="System.Data" />
+      <frameworkAssembly assemblyName="System.Net" />
+      <frameworkAssembly assemblyName="System.Net.Http" />
+      <frameworkAssembly assemblyName="System.Runtime.Caching" />
+      <frameworkAssembly assemblyName="System.Web" />
+      <frameworkAssembly assemblyName="System.Xml" />
+    </frameworkAssemblies>
+    <dependencies>
+      <group targetFramework="net45">
+        <dependency id="Microsoft.AspNet.WebApi.Core" version="5.4.2" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\..\Out\**" target="lib/net45" />
+  </files>
+</package>

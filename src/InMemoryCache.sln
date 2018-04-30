@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2037
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InMemory", "InMemoryCache\InMemory.csproj", "{033E85D9-5D3F-4F49-8AA7-13118272463B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{A8C0394D-EDDE-4943-86D8-4AB0BCF85D5B}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+		.nuget\nupack.bat = .nuget\nupack.bat
+		.nuget\package.nuspec = .nuget\package.nuspec
+		.nuget\packageCreator.bat = .nuget\packageCreator.bat
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{033E85D9-5D3F-4F49-8AA7-13118272463B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{033E85D9-5D3F-4F49-8AA7-13118272463B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{033E85D9-5D3F-4F49-8AA7-13118272463B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{033E85D9-5D3F-4F49-8AA7-13118272463B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BCCE368E-F8CC-4EBB-9F32-869C03FA2B1A}
+	EndGlobalSection
+EndGlobal
