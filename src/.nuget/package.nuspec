@@ -4,7 +4,7 @@
     <id>InMemory</id>
     <title>InMemory</title>
     <!--<iconUrl></iconUrl>-->
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <description>
       A MemoryCache which tries to prevent cache miss for hot entries, by refreshing before expiration.
     </description>
@@ -36,7 +36,7 @@
     </frameworkAssemblies>
     <dependencies>
       <group targetFramework="net45">
-        <dependency id="Microsoft.AspNet.WebApi.Core" version="5.4.2" />
+        <dependency id="Microsoft.AspNet.WebApi.Core" version="5.2.4" />
       </group>
     </dependencies>
   </metadata>
