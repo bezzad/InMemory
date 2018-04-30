@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2037
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InMemory", "InMemoryCache\InMemory.csproj", "{033E85D9-5D3F-4F49-8AA7-13118272463B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InMemory", "InMemory\InMemory.csproj", "{033E85D9-5D3F-4F49-8AA7-13118272463B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{A8C0394D-EDDE-4943-86D8-4AB0BCF85D5B}"
 	ProjectSection(SolutionItems) = preProject
@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{A8C039
 		.nuget\packageCreator.bat = .nuget\packageCreator.bat
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InMemory.Test", "InMemory.Test\InMemory.Test.csproj", "{E2EF2E84-89EF-4651-B3DA-73CE0BF8CDCC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{033E85D9-5D3F-4F49-8AA7-13118272463B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{033E85D9-5D3F-4F49-8AA7-13118272463B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{033E85D9-5D3F-4F49-8AA7-13118272463B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2EF2E84-89EF-4651-B3DA-73CE0BF8CDCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2EF2E84-89EF-4651-B3DA-73CE0BF8CDCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2EF2E84-89EF-4651-B3DA-73CE0BF8CDCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2EF2E84-89EF-4651-B3DA-73CE0BF8CDCC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
