@@ -4,7 +4,7 @@
     <id>InMemory</id>
     <title>InMemory</title>
     <!--<iconUrl></iconUrl>-->
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <description>
       A MemoryCache which tries to prevent cache miss for hot entries, by refreshing before expiration.
     </description>
@@ -17,7 +17,7 @@
     <projectUrl>https://github.com/Behzadkhosravifar/InMemoryCache</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <releaseNotes>
-      * First Version
+      * Add new feature to RateLimiter attribute parameters
     </releaseNotes>
     <copyright>Copyright (C) 2017-2018 Behzad Khosravifar</copyright>
     <tags>
