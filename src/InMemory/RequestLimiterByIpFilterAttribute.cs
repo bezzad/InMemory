@@ -12,24 +12,19 @@ namespace InMemory
     /// </summary>
     public class RequestLimiterByIpFilterAttribute : ActionFilterAttribute
     {
-        private static readonly RateLimiter DefaultIpBasedRateLimiter = new RateLimiter(2000, 3600, nameof(RequestLimiterByIpFilterAttribute));
         private RateLimiter IpBasedRateLimiter { get; }
 
-
-        public RequestLimiterByIpFilterAttribute()
-        { }
-
-        public RequestLimiterByIpFilterAttribute(int maxTries, int inPeriod, string filterName)
+        
+        public RequestLimiterByIpFilterAttribute(int maxTries = 2000, int inPeriod = 3600, string filterName = nameof(RequestLimiterByIpFilterAttribute))
         {
             IpBasedRateLimiter = new RateLimiter(maxTries, inPeriod, filterName);
         }
-
-
+        
         public override void OnActionExecuting(HttpActionContext filterContext)
         {
             //var methodName = $"{filterContext.ActionDescriptor.ControllerDescriptor.ControllerName}.{filterContext.ActionDescriptor.ActionName}";
             var ip = HttpContext.Current.ClientIpAddress() ?? "";
-            if (!IpBasedRateLimiter?.CanProceed(ip) ?? !DefaultIpBasedRateLimiter.CanProceed(ip))
+            if (!IpBasedRateLimiter.CanProceed(ip))
             {
                 filterContext.Response = new HttpResponseMessage(HttpStatusCode.Forbidden); // new HttpStatusCodeResult(429);
                 //Logger.Fatal($"{ip} could not enter {methodName} because of many tries");

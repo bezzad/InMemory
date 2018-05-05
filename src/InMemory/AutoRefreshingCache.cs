@@ -48,10 +48,7 @@ namespace InMemory
             {
                 if (Interlocked.Increment(ref item.RefreshWorkers) == 1)
                 {
-                    Task.Run(() =>
-                    {
-                        Refresh(key, calc);
-                    });
+                    Task.Run(() => Refresh(key, calc));
                 }
             }
             return item.Value;

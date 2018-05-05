@@ -33,9 +33,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
@@ -50,14 +47,6 @@
       <Project>{033e85d9-5d3f-4f49-8aa7-13118272463b}</Project>
       <Name>InMemory</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNet.Mvc">
-      <Version>5.2.3</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.AspNet.WebApi.Core">
-      <Version>5.2.4</Version>
-    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
