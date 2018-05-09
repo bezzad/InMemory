@@ -53,11 +53,6 @@
     <Compile Include="RequestLimiterByIpFilterAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config">
-      <SubType>Designer</SubType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="Microsoft.AspNet.WebApi.Core">
       <Version>5.2.5</Version>
     </PackageReference>
