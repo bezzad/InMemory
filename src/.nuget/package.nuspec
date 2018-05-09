@@ -4,7 +4,7 @@
     <id>InMemory</id>
     <title>InMemory</title>
     <!--<iconUrl></iconUrl>-->
-    <version>1.0.4</version>
+    <version>1.0.5</version>
     <description>
       A MemoryCache which tries to prevent cache miss for hot entries, by refreshing before expiration.
     </description>
