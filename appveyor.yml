@@ -3,4 +3,6 @@ image: Visual Studio 2017
 configuration: Release
 platform: Any CPU
 before_build:
-  - nuget restore
+- cmd: nuget restore
+build:
+  verbosity: normal
