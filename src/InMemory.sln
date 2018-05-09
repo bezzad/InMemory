@@ -8,8 +8,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{A8C0394D-EDDE-4943-86D8-4AB0BCF85D5B}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\NuGet.Config = .nuget\NuGet.Config
-		.nuget\NuGet.exe = .nuget\NuGet.exe
-		.nuget\NuGet.targets = .nuget\NuGet.targets
 		.nuget\nupack.bat = .nuget\nupack.bat
 		.nuget\package.nuspec = .nuget\package.nuspec
 		.nuget\packageCreator.bat = .nuget\packageCreator.bat
