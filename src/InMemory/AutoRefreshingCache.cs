@@ -12,6 +12,7 @@ namespace InMemory
         private readonly MemoryCache _cache;
         private readonly int _expireAfterSeconds;
         private readonly int _refreshAfterSeconds;
+
         public readonly string CacheName;
 
         /// <summary>
@@ -20,11 +21,12 @@ namespace InMemory
         /// <param name="expireAfter">expire after this argument value in seconds</param>
         /// <param name="refreshAfter">refresh after this argument value in seconds</param>
         /// <param name="cacheName">cacheName should be unique in the project and not containing # char</param>
-        public AutoRefreshingCache(int expireAfter, int refreshAfter, string cacheName)
+        public AutoRefreshingCache(string cacheName, int expireAfter = int.MaxValue, int refreshAfter = int.MaxValue)
         {
             _cache = MemoryCache.Default;
             _expireAfterSeconds = expireAfter;
             _refreshAfterSeconds = refreshAfter;
+
             CacheName = cacheName;
         }
 
@@ -33,14 +35,14 @@ namespace InMemory
         /// </summary>
         /// <param name="key">key, should not contain # char</param>
         /// <param name="calc"></param>
-        /// <returns></returns>
+        /// <returns>get stored item as <see cref="T"/> type</returns>
         public T Get(string key, Func<T> calc)
         {
-            var item = Get(key);
+            var item = GetCacheItem(key);
             if (item == null)
             {
                 Refresh(key, calc);
-                return Get(key).Value;
+                return GetCacheItem(key).Value;
             }
 
             var refreshThreshold = DateTime.UtcNow.AddSeconds(-_refreshAfterSeconds);
@@ -51,12 +53,27 @@ namespace InMemory
                     Task.Run(() => Refresh(key, calc));
                 }
             }
+
             return item.Value;
+        }
+
+        /// <summary>
+        /// Get the key value's
+        /// </summary>
+        /// <param name="key">key, should not contain # char</param>
+        /// <returns>get stored item as <see cref="TOut"/> type</returns>
+        public TOut Get<TOut>(string key)
+        {
+            var item = GetCacheItem(key);
+            if (item != null && item.Value is TOut outVal)
+                return outVal;
+
+            return default;
         }
 
         public int CountExpiredElements(IEnumerable<string> keys)
         {
-            return keys?.Where(k => Get(k) == null).Count() ?? 0;
+            return keys?.Where(k => GetCacheItem(k) == null).Count() ?? 0;
         }
 
         public void Inject(string key, T data)
@@ -82,7 +99,7 @@ namespace InMemory
             Inject(key, data);
         }
 
-        private CacheItemHolder Get(string key)
+        private CacheItemHolder GetCacheItem(string key)
         {
             return _cache.Get($"{CacheName}#{key}") as CacheItemHolder;
         }

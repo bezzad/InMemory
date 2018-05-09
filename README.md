@@ -8,7 +8,7 @@
 
 A MemoryCache which tries to prevent cache miss for hot entries, by refreshing before expiration.
 
-### AutoRefreshingCache Example:
+### Auto Refreshing Cache example:
 
 ```C#
 
@@ -25,7 +25,17 @@ int expiredCacheCount = cache.CountExpiredElements(new[] { "key1", "key2", "key3
 var value = cache.Get("key", () => "new value");
 ```
 
-### RateLimiter Example:
+### Lifetime Cache example:
+
+```C#
+
+// define lifetime cache
+var lifetimeCache = new AutoRefreshingCache<object>(cacheName: "lifetimeCache");
+lifetimeCache.Inject("test", 123456);
+int testValue = lifetimeCache.Get<int>("test");
+```
+
+### Rate Limiter example:
 
 ```C#
 
@@ -34,7 +44,7 @@ var rateLimiter = new RateLimiter(maxTries: 100, inPeriod: 120, cacheName: "rate
 bool canProc = rateLimiter.CanProceed("method name or a key");
 ```
 
-### RequestLimiterByIpFilter Example:
+### Request Limiter by IP Filter example:
 
 ```C#
 
