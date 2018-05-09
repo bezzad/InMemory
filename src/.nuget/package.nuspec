@@ -4,7 +4,7 @@
     <id>InMemory</id>
     <title>InMemory</title>
     <!--<iconUrl></iconUrl>-->
-    <version>1.0.5</version>
+    <version>1.0.6</version>
     <description>
       A MemoryCache which tries to prevent cache miss for hot entries, by refreshing before expiration.
     </description>
@@ -42,6 +42,6 @@
   </metadata>
   <files>
     <file src="..\..\Out\**" target="lib/net45" />
-    <file src="..\..\readme.md" target="" />
+    <file src="..\..\README.md" target="" />
   </files>
 </package>
