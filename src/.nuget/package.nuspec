@@ -14,7 +14,7 @@
     <authors>Behzad Khosravifar</authors>
     <owners>Behzad Khosravifar</owners>
     <licenseUrl>http://www.gnu.org/licenses/gpl.txt</licenseUrl>
-    <projectUrl>https://github.com/Behzadkhosravifar/InMemoryCache</projectUrl>
+    <projectUrl>https://github.com/Behzadkhosravifar/InMemory</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <releaseNotes>
       * Add lifetime cache feature
